@@ -1,18 +1,13 @@
 function isLucky(n) {
 
-  //  var n;
-
-  if (isWithinNumRange(n) && isEvenDigitSet(n) && identicalHalfSum(n)) {
+  if (isWithinNumRange(n) && isEvenDigitSet(n) && identicalSumCheck(n)) {
 
     console.log(`
                 Yay! It's TRUE, the number ${n} is considered lucky!
                `)
-
   }
 
-
-
-} // Function isLucky()
+}
 
 
 
@@ -80,20 +75,9 @@ function isEvenDigitSet(n) {
 -We make this string into an Array
 */
 
-function identicalHalfSum(n) {
-
-
-  console.log(n)
-  console.log(typeof (n));
-
+function identicalSumCheck(n) {
 
   let numString = n.toString();
-
-  console.log(numString);
-  console.log(typeof (numString));
-  console.log(numString.length);
-
-
 
   // Array of Numbers with Type = "String"
   let numArrayTypeString = numString.split("");;
@@ -112,8 +96,6 @@ function identicalHalfSum(n) {
 
 
   let leftHalf = numArray.splice(0, half_length);
-
-  console.log(half_length);
   console.log(leftHalf)
 
   let rightHalf = numArray;
@@ -121,33 +103,29 @@ function identicalHalfSum(n) {
 
 
 
-  let leftHalfSum = leftHalf.reduce(function (sum, oneNumber) {
-    return sum + oneNumber;
-  }, 0);
+
+  let leftHalfSum = leftHalf.reduce(
+    (sum, oneNumber) => sum + oneNumber,
+    0
+  );
 
   console.log(leftHalfSum);
 
 
 
 
-  let rightHalfSum = rightHalf.reduce(function (sum, oneNumber) {
-    return sum + oneNumber;
-  }, 0);
+  let rightHalfSum = rightHalf.reduce(
+    (sum, oneNumber) => sum + oneNumber,
+    0
+  );
 
   console.log(rightHalfSum);
 
-
-
-
-
-}
-
-function identicalSumCheck(n) {
-
+  if (leftHalfSum === rightHalfSum) {
+    return true;
+  }
 
 }
-
-
 
 
 
