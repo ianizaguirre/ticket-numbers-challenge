@@ -1,82 +1,44 @@
+isLucky(481229);
+
+
 function isLucky(n) {
+  var message;
 
   if (isWithinNumRange(n) && isEvenDigitSet(n) && identicalSumCheck(n)) {
-
-    console.log(`
-                Yay! It's TRUE, the number ${n} is considered lucky!
-               `)
+    message = console.log(`Yay! It's TRUE, the number ${n} is considered lucky!`)
+    return message;
   }
-
+  message = console.log(`Oh No! It's False! The number ${n} is NOT considered lucky!`)
+  return message;
 }
 
 
-
-
-
-
-
-
-
-
-/*
-1) make sure n is a number
-2) if n is a number, then check if it is within the range constraint
-*/
+/* ====================================
+=== === === === Functions === === === ===
+==================================== */
 
 function isWithinNumRange(n) {
   if (!isNaN(n) && n >= 10 && n < Math.pow(10, 6)) {
     return true;
   }
-}
+} // isWithinNumRange
 
-
-/* ===== isEvenDigitSet(n) ====
-
-// Task1
-Convert n to a string
-
-// Task2
-Lets use the string propertys ".length" method,
-Make n equal the number of characters in this string
-
-// Task3
-Lets use the Modulus operator(%) to check if the character count is an even number.
-A number is even if it can be divided by two with no remainder
-If it is an even number, then it will return "True", since we will have an even digit number set.
-*/
 
 
 function isEvenDigitSet(n) {
+  n = n.toString().length;
 
-  // Task 1
-  var n = n.toString();
-  console.log('Task1 ===> ' + n + ' this is a ' + typeof (n));
-
-  // Task 2
-  n = n.length;
-  console.log('Task2 ===> ' + n + ' this is a ' + typeof (n));
-
-  // Task3
   if (n % 2 === 0) {
-    const charCountIsEven = true
-    console.log(charCountIsEven)
-    return charCountIsEven;
+    return true;
   }
-
-}
-
+} // isEvenDigitSet
 
 
 
-/*
--We make n into a String
--We get this Strings length
 
--We make this string into an Array
-*/
+
 
 function identicalSumCheck(n) {
-
   let numString = n.toString();
 
   // Array of Numbers with Type = "String"
@@ -88,12 +50,9 @@ function identicalSumCheck(n) {
   console.log(numArray);
 
 
-  // ==============
-  let half_length = Math.ceil(numString.length / 2);
-  console.log(half_length);
-  // ==============
 
 
+  const half_length = Math.ceil(numString.length / 2);
 
   let leftHalf = numArray.splice(0, half_length);
   console.log(leftHalf)
@@ -113,7 +72,6 @@ function identicalSumCheck(n) {
 
 
 
-
   let rightHalfSum = rightHalf.reduce(
     (sum, oneNumber) => sum + oneNumber,
     0
@@ -124,18 +82,4 @@ function identicalSumCheck(n) {
   if (leftHalfSum === rightHalfSum) {
     return true;
   }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-isLucky(1230);
+} // identicalSumCheck
