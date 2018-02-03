@@ -1,4 +1,4 @@
-isLucky(481229);
+isLucky(1230);
 
 
 function isLucky(n) {
@@ -39,45 +39,39 @@ function isEvenDigitSet(n) {
 
 
 function identicalSumCheck(n) {
-  let numString = n.toString();
+  const numString = n.toString();
 
   // Array of Numbers with Type = "String"
-  let numArrayTypeString = numString.split("");;
+  const numArrayTypeString = numString.split("");;
   console.log(numArrayTypeString);
 
   // Array of Numbers with Type = "Number"
-  let numArray = numArrayTypeString.map(Number);
+  const numArray = numArrayTypeString.map(Number);
   console.log(numArray);
-
-
 
 
   const half_length = Math.ceil(numString.length / 2);
 
-  let leftHalf = numArray.splice(0, half_length);
+  const leftHalf = numArray.splice(0, half_length);
   console.log(leftHalf)
 
-  let rightHalf = numArray;
+  const rightHalf = numArray;
   console.log(rightHalf);
 
 
-
-
-  let leftHalfSum = leftHalf.reduce(
+  const leftHalfSum = leftHalf.reduce(
     (sum, oneNumber) => sum + oneNumber,
     0
   );
-
   console.log(leftHalfSum);
 
 
-
-  let rightHalfSum = rightHalf.reduce(
+  const rightHalfSum = rightHalf.reduce(
     (sum, oneNumber) => sum + oneNumber,
     0
   );
-
   console.log(rightHalfSum);
+
 
   if (leftHalfSum === rightHalfSum) {
     return true;
