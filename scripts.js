@@ -1,4 +1,11 @@
-isLucky(1230);
+function runProgram(n) {
+  n = document.getElementById(n).value;
+  isLucky(n);
+}
+
+
+
+//isLucky(1230);
 
 
 function isLucky(n) {
