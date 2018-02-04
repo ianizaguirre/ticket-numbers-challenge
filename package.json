@@ -1,0 +1,25 @@
+{
+  "name": "ticket-numbers",
+  "version": "1.0.0",
+  "description": "<hr> <p><strong>Note:</strong> This application is meant to be used with your browsers DevTools Console open.</p> <hr>",
+  "main": "babel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tester": "node unit-test.js | ./node_modules/.bin/tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianizaguirre/ticket-numbers-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ianizaguirre/ticket-numbers-challenge/issues"
+  },
+  "homepage": "https://github.com/ianizaguirre/ticket-numbers-challenge#readme",
+  "devDependencies": {
+    "tap-simple": "^0.3.1",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.8.0"
+  }
+}
